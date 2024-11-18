@@ -1,8 +1,8 @@
-import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
-const HomeLayout = () => {
-  return (
+const AuthLayout=()=>{
+  return(
     <div className="font-titilliium">
       <header>
         <nav>
@@ -14,5 +14,5 @@ const HomeLayout = () => {
       </main>
     </div>
   );
-};
-export default HomeLayout;
+}
+export default AuthLayout;
