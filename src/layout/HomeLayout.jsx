@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const HomeLayout = () => {
   return (
-    <div className="font-titilliium">
+    <div className="font-titilliium w-11/12 mx-auto">
       <header>
         <nav>
           <Navbar></Navbar>
