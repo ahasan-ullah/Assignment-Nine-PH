@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import logo from "../assets/logo.jpg"
 
 const Navbar = () => {
   const links = (
@@ -40,7 +41,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="font-bold text-xl md:text-3xl">Career Hub</a>
+        <img className="w-32" src={logo} alt="" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal text-lg space-x-5">{links}</ul>
@@ -48,7 +49,7 @@ const Navbar = () => {
       <div className="navbar-end">
         {user && user?.email ? (
           <div className="flex space-x-3 items-center justify-center">
-            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+            <div className="tooltip tooltip-bottom cursor-pointer" data-tip={user.displayName}>
               <img
                 className="w-12 h-12 rounded-full object-cover"
                 src={user.photoURL}
