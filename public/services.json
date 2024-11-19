@@ -1,0 +1,83 @@
+{
+  "services": [
+    {
+      "service_name": "Career Counseling Sessions",
+      "category": "Online",
+      "image_url": "https://i.ibb.co.com/m5vsZTZ/Career-Counseling-Sessions.jpg",
+      "brief_description": "Personalized career counseling to help you discover your strengths, explore job opportunities, and make informed decisions for your career development.",
+      "pricing": "$80 per session",
+      "duration": "05-12-24 5-6pm",
+      "counselor": "Dr. John Doe",
+      "rating": 4.8
+    },
+    {
+      "service_name": "Resume Review",
+      "category": "Online",
+      "image_url": "https://i.ibb.co.com/nfXNLdV/Resume-Review.png",
+      "brief_description": "Get expert feedback on your resume to improve its structure, content, and formatting, ensuring it makes a strong impression on potential employers.",
+      "pricing": "$50 per review",
+      "duration": "06-12-24 10-11am",
+      "counselor": "Ms. Jane Smith",
+      "rating": 4.5
+    },
+    {
+      "service_name": "Interview Coaching",
+      "category": "Online",
+      "image_url": "https://i.ibb.co.com/MM7DcVx/Interview-Coaching.jpg",
+      "brief_description": "PPrepare for your interviews with tailored coaching, mock interview sessions, and expert tips to help you succeed in high-stakes interviews.",
+      "pricing": "$100 per session",
+      "duration": "07-12-24 3-4pm",
+      "counselor": "Mr. Alex Johnson",
+      "rating": 5.0
+    },
+    {
+      "service_name": "Group Counseling (Career Development)",
+      "category": "Group",
+      "image_url": "https://i.ibb.co.com/YZxCM77/Group-Counseling-Career-Development.jpg",
+      "brief_description": "Join a group of professionals for career development sessions, where you'll receive guidance on career transitions, networking strategies, and job search techniques.",
+      "pricing": "$40 per person",
+      "duration": "08-12-24 1-3pm",
+      "counselor": "Ms. Linda Blake",
+      "rating": 4.6
+    },
+    {
+      "service_name": "Job Search Strategy",
+      "category": "Online",
+      "image_url": "https://i.ibb.co.com/1bZM1KX/Job-Search-Strategy.png",
+      "brief_description": "Learn proven strategies for effective job searching, including how to network, apply for jobs, and tailor your applications to increase your chances of success.",
+      "duration": "09-12-24 11am-12pm",
+      "counselor": "Dr. Samuel Lee",
+      "rating": 4.9
+    },
+    {
+      "service_name": "LinkedIn Profile Optimization",
+      "category": "Online",
+      "image_url": "https://i.ibb.co.com/JQLVCpK/Linked-In-Profile-Optimization.png",
+      "brief_description": "Enhance your LinkedIn profile with expert guidance on how to present your skills, experience, and achievements to attract recruiters and potential employers.",
+      "pricing": "$60 per review",
+      "duration": "10-12-24 2-3pm",
+      "counselor": "Ms. Eva Moore",
+      "rating": 4.7
+    },
+    {
+      "service_name": "Salary Negotiation Coaching",
+      "category": "Offline",
+      "image_url": "https://i.ibb.co.com/gzrzSRM/Salary-Negotiation-Coaching.jpg",
+      "brief_description": "Learn effective salary negotiation tactics to confidently negotiate your salary during job offers or performance reviews, ensuring you get what you're worth.",
+      "pricing": "$120 per session",
+      "duration": "11-12-24 4-5pm",
+      "counselor": "Mr. William Harris",
+      "rating": 4.8
+    },
+    {
+      "service_name": "Personal Branding for Career Success",
+      "category": "Online",
+      "image_url": "https://i.ibb.co.com/RgX59v6/Personal-Branding-for-Career-Success.jpg",
+      "brief_description": "Build a strong personal brand to stand out in your industry by learning how to effectively communicate your unique strengths and value to potential employers.",
+      "pricing": "$90 per session",
+      "duration": "12-12-24 12-1pm",
+      "counselor": "Ms. Olivia Clark",
+      "rating": 5.0
+    }
+  ]
+}
