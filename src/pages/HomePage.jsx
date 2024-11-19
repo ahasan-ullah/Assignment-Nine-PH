@@ -1,6 +1,7 @@
 import OurMission from "../components/OurMission";
 import OurServices from "../components/OurServices";
 import SwiperBanner from "../components/SwiperBanner";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 const HomePage = () => {
   return (
@@ -8,6 +9,7 @@ const HomePage = () => {
       <SwiperBanner></SwiperBanner>
       <OurServices></OurServices>
       <OurMission></OurMission>
+      <WhyChooseUs></WhyChooseUs>
     </div>
   );
 };
