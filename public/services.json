@@ -1,6 +1,7 @@
 {
   "services": [
     {
+      "id": 1,
       "service_name": "Career Counseling Sessions",
       "category": "Online",
       "image_url": "https://i.ibb.co.com/m5vsZTZ/Career-Counseling-Sessions.jpg",
@@ -11,6 +12,7 @@
       "rating": 4.8
     },
     {
+      "id": 2,
       "service_name": "Resume Review",
       "category": "Online",
       "image_url": "https://i.ibb.co.com/nfXNLdV/Resume-Review.png",
@@ -21,6 +23,7 @@
       "rating": 4.5
     },
     {
+      "id": 3,
       "service_name": "Interview Coaching",
       "category": "Online",
       "image_url": "https://i.ibb.co.com/MM7DcVx/Interview-Coaching.jpg",
@@ -31,6 +34,7 @@
       "rating": 5.0
     },
     {
+      "id": 4,
       "service_name": "Group Counseling (Career Development)",
       "category": "Group",
       "image_url": "https://i.ibb.co.com/YZxCM77/Group-Counseling-Career-Development.jpg",
@@ -41,6 +45,7 @@
       "rating": 4.6
     },
     {
+      "id": 5,
       "service_name": "Job Search Strategy",
       "category": "Online",
       "image_url": "https://i.ibb.co.com/1bZM1KX/Job-Search-Strategy.png",
@@ -50,6 +55,7 @@
       "rating": 4.9
     },
     {
+      "id": 6,
       "service_name": "LinkedIn Profile Optimization",
       "category": "Online",
       "image_url": "https://i.ibb.co.com/JQLVCpK/Linked-In-Profile-Optimization.png",
@@ -60,6 +66,7 @@
       "rating": 4.7
     },
     {
+      "id": 7,
       "service_name": "Salary Negotiation Coaching",
       "category": "Offline",
       "image_url": "https://i.ibb.co.com/gzrzSRM/Salary-Negotiation-Coaching.jpg",
@@ -70,6 +77,7 @@
       "rating": 4.8
     },
     {
+      "id": 8,
       "service_name": "Personal Branding for Career Success",
       "category": "Online",
       "image_url": "https://i.ibb.co.com/RgX59v6/Personal-Branding-for-Career-Success.jpg",
