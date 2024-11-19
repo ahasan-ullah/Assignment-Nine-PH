@@ -1,36 +1,116 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
+import { Bounce } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
-  const [error,setError]=useState({});
-  const {createNewUser,setUser,updateUserProfile}=useContext(AuthContext);
+  const [error, setError] = useState({});
+  const { createNewUser, setUser, updateUserProfile, googleSignIn } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const navigate=useNavigate();
-  
-  const handleSubmit=(e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const form=new FormData(e.target);
-    const name=form.get("name");
-    const email=form.get("email");
-    const photo=form.get("photo");
-    const pass=form.get("pass");
+    const form = new FormData(e.target);
+    const name = form.get("name");
+    const email = form.get("email");
+    const photo = form.get("photo");
+    const pass = form.get("pass");
+
     if (pass.length < 6) {
       setError({ ...error, password: "Must be at least 6 characters" });
       return;
     }
     setError({ ...error, password: "" });
+
     if (!/(?=.*[a-z])(?=.*[A-Z])/.test(pass)) {
-      setError({ ...error, password: "Must include both uppercase and lowercase letters" });
+      setError({
+        ...error,
+        password: "Must include both uppercase and lowercase letters",
+      });
       return;
     }
-
     setError({ ...error, password: "" });
+    createNewUser(email, pass)
+      .then((result) => {
+        setUser(result.user);
+        updateUserProfile({ displayName: name, photoURL: photo })
+          .then(() => {
+            toast.success("Registration successful!", {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              transition: Bounce,
+            });
+            navigate("/");
+          })
+          .catch(() => {
+            toast.error("Failed to update user profile", {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              transition: Bounce,
+            });
+          });
+      })
+      .catch(() => {
+        toast.error("Registration failed: ", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      });
+  };
 
-    createNewUser(email,pass).then(result=>{setUser(result.user);
-      console.log(result.user)
-    updateUserProfile({displayName: name, photoURL: photo}).then(()=>navigate("/")).catch(err=>console.log(err));
-    }).catch(err=>console.log(err.message,err.code));
-  }
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        setUser(result.user);
+        navigate("/");
+        toast.success("Login Successful", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      })
+      .catch(() => {
+        toast.error("Please enter valid details", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      });
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="card bg-base-100 w-full max-w-lg shrink-0 md:border">
@@ -86,29 +166,35 @@ const Register = () => {
               required
             />
           </div>
-          {
-            error.password && <label className="label text-xs text-red-500">{error.password}</label>
-          }
+          {error.password && (
+            <label className="label text-xs text-red-500">
+              {error.password}
+            </label>
+          )}
           <div className="mt-6 form-control">
             <button className="btn bg-orange-500 text-white text-lg">
               Register
             </button>
           </div>
+        </form>
+        <div className="card-body -mt-10">
           <p className="text-center text-gray-500">Or Sign up with</p>
-          <div className="form-control">
-            <button className="btn btn-neutral text-white text-lg">
-              Google
-            </button>
-          </div>
+          <button
+            onClick={handleGoogleSignIn}
+            className="btn btn-neutral text-white text-lg"
+          >
+            Google
+          </button>
           <p className="text-center mt-6 text-gray-500">
-            Don't have any account?{" "}
+            Already have an account?{" "}
             <Link to={"/auth/login"} className="text-blue-500 font-bold">
               Login
             </Link>
           </p>
-        </form>
+        </div>
       </div>
     </div>
   );
 };
+
 export default Register;

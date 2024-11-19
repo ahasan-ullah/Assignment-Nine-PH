@@ -5,15 +5,15 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAoNAKzQHAq9sv8k-5wzFvZt9kiT87iR4U",
-  authDomain: "career-hub-f7869.firebaseapp.com",
-  projectId: "career-hub-f7869",
-  storageBucket: "career-hub-f7869.firebasestorage.app",
-  messagingSenderId: "104846769713",
-  appId: "1:104846769713:web:2cf36eb291dd0d0ae35f10"
+  apiKey: "AIzaSyDlEWsPwxxBjDyRk5Apx21c10AiKTTcFoE",
+  authDomain: "career-hub-7b052.firebaseapp.com",
+  projectId: "career-hub-7b052",
+  storageBucket: "career-hub-7b052.firebasestorage.app",
+  messagingSenderId: "525129700346",
+  appId: "1:525129700346:web:56a7ac321694b9f3d54a43"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export default app
+export default app;
