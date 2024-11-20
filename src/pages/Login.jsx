@@ -16,7 +16,6 @@ const Login = () => {
     userLogin(email, pass)
       .then((result) => {
         setUser(result.user);
-        // navigate("/");
         navigate(location?.state ? location.state : "/");
         toast.success("Login Successful", {
           position: "top-center",
