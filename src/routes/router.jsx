@@ -5,6 +5,8 @@ import AuthLayout from "../layout/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ProfilePage from "../pages/ProfilePage";
+import PrivateRoutes from "./PrivateRoutes";
+import ServiceDetails from "../pages/ServiceDetails";
 
 const router=createBrowserRouter([
   {
@@ -19,8 +21,12 @@ const router=createBrowserRouter([
       {
         path: "/profile",
         element: <ProfilePage></ProfilePage>
-      }
+      },
     ]
+  },
+  {
+    path: "/services/:id",
+    element: <PrivateRoutes><ServiceDetails></ServiceDetails></PrivateRoutes>
   },
   {
     path: "auth",

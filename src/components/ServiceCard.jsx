@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 const ServiceCard = ({ card }) => {
+  const navigate=useNavigate();
+  const handleLearnMore=()=>{
+    navigate(`/services/${card.id}`);
+  }
   return (
     <div className="max-w-sm rounded-lg border overflow-hidden p-4 flex flex-col h-full">
       <div className="relative">
@@ -15,7 +21,7 @@ const ServiceCard = ({ card }) => {
         <p className="text-sm text-gray-600 mt-2">Counselor: {card.counselor}</p>
       </div>
       <div className="px-4 pb-4 flex-shrink-0">
-        <button className="w-full py-2 bg-orange-500 text-white font-semibold rounded-md hover:bg-transparent hover:text-black hover:border transition duration-300">
+        <button onClick={handleLearnMore} className="w-full py-2 bg-orange-500 text-white font-semibold rounded-md hover:bg-transparent hover:text-black hover:border transition duration-300">
           Learn More
         </button>
       </div>

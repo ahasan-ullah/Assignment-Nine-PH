@@ -47,7 +47,6 @@ const AuthProvider=({children})=>{
     googleSignIn,
   }
 
-  console.log(user);
 
   useEffect(()=>{
     const unsubscribe=onAuthStateChanged(auth,(currentUser)=>{

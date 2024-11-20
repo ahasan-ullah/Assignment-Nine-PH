@@ -13,7 +13,6 @@ const WhyChooseUs = () => {
             potential and make informed decisions about your future.
           </p>
           <div className="space-y-4">
-            {/* Certified Expert */}
             <div className="flex items-start space-x-4">
               <div className="text-orange-500 text-xl">
                 <i className="fas fa-user-graduate"></i>

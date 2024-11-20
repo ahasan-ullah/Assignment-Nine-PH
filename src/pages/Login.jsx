@@ -1,5 +1,5 @@
-import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import { Bounce } from "react-toastify";
@@ -7,6 +7,7 @@ import { Bounce } from "react-toastify";
 const Login = () => {
   const { setUser, userLogin, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location=useLocation();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -15,8 +16,8 @@ const Login = () => {
     userLogin(email, pass)
       .then((result) => {
         setUser(result.user);
-        navigate("/");
-        //navigate(location?.state ? location.state : "/");
+        // navigate("/");
+        navigate(location?.state ? location.state : "/");
         toast.success("Login Successful", {
           position: "top-center",
           autoClose: 3000,
@@ -47,7 +48,7 @@ const Login = () => {
   const handleGoogleSignIn=()=>{
     googleSignIn().then(result=>{
       setUser(result.user);
-      navigate("/");
+      navigate(location?.state ? location.state : "/");
       toast.success("Login Successful", {
         position: "top-center",
         autoClose: 3000,

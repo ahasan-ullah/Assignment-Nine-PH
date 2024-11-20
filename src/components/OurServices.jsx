@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import ServiceCard from "./ServiceCard";
+import LoadingPage from "../pages/LoadingPage"
 
 const OurServices = () => {
   const data = useLoaderData();
@@ -16,9 +17,10 @@ const OurServices = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
-        {
-          data.services.map((card,id)=><ServiceCard card={card} key={id}></ServiceCard>)
-        }
+        {data?.services &&
+          data.services.map((card, id) => (
+            <ServiceCard card={card} key={id}></ServiceCard>
+          ))}
       </div>
     </div>
   );
