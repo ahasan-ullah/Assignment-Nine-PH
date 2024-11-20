@@ -20,6 +20,9 @@ const AuthProvider=({children})=>{
     setLoading(true);
     return updateProfile(auth.currentUser,updatedData);
   }
+  const updateUserProfile2=(updatedData)=>{
+    return updateProfile(auth.currentUser,updatedData);
+  }
 
   const userLogin=(email,password)=>{
     setLoading(true);
@@ -45,6 +48,7 @@ const AuthProvider=({children})=>{
     logout,
     userLogin,
     googleSignIn,
+    updateUserProfile2,
   }
 
 
