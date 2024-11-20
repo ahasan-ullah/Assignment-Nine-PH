@@ -7,11 +7,13 @@ import Register from "../pages/Register";
 import ProfilePage from "../pages/ProfilePage";
 import PrivateRoutes from "./PrivateRoutes";
 import ServiceDetails from "../pages/ServiceDetails";
+import ErrorPage from "../pages/ErrorPage";
 
 const router=createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -20,7 +22,7 @@ const router=createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <ProfilePage></ProfilePage>
+        element: <PrivateRoutes><ProfilePage></ProfilePage></PrivateRoutes>
       },
     ]
   },
