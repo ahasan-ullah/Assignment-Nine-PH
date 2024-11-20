@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { Bounce } from "react-toastify";
 
 const Login = () => {
+  document.title="Login | Career Hub"
   const { setUser, userLogin, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location=useLocation();

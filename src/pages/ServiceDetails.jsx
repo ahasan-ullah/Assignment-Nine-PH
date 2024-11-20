@@ -6,6 +6,7 @@ import LoadingPage from "./LoadingPage";
 import DetailsCard from "../components/DetailsCard";
 
 const ServiceDetails = () => {
+  document.title="Service | Career Hub"
   const { id } = useParams();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);

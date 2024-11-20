@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { Bounce } from "react-toastify";
 
 const Reset = () => {
+  document.title="Password Reset"
   const { resetPassword } = useContext(AuthContext);
   const handleSend = (e) => {
     e.preventDefault();

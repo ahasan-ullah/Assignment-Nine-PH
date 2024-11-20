@@ -4,6 +4,7 @@ import SwiperBanner from "../components/SwiperBanner";
 import WhyChooseUs from "../components/WhyChooseUs";
 
 const HomePage = () => {
+  document.title="Home | Career Hub"
   return (
     <div>
       <SwiperBanner></SwiperBanner>

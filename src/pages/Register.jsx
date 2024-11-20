@@ -6,6 +6,7 @@ import { Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaEye } from "react-icons/fa";
 const Register = () => {
+  document.title="Register | Career Hub"
   const [error, setError] = useState({});
   const { createNewUser, setUser, updateUserProfile, googleSignIn } =
     useContext(AuthContext);
