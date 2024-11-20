@@ -3,12 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import { Bounce } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import { FaEye } from "react-icons/fa";
 const Register = () => {
   const [error, setError] = useState({});
   const { createNewUser, setUser, updateUserProfile, googleSignIn } =
     useContext(AuthContext);
   const navigate = useNavigate();
+  const [show,setShow]=useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -111,6 +113,10 @@ const Register = () => {
       });
   };
 
+  const handleShow=()=>{
+    setShow(!show);
+  }
+
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="card bg-base-100 w-full max-w-lg shrink-0 md:border">
@@ -154,17 +160,20 @@ const Register = () => {
               required
             />
           </div>
-          <div className="form-control">
+          <div className="form-control relative">
             <label className="label">
               <span className="label-text">Password</span>
             </label>
             <input
               name="pass"
-              type="password"
+              type={show?"text":"password"}
               placeholder="Enter your password"
               className="input input-bordered"
               required
             />
+            <button onClick={handleShow} className="absolute right-5 top-14">
+              <FaEye />
+            </button>
           </div>
           {error.password && (
             <label className="label text-xs text-red-500">
