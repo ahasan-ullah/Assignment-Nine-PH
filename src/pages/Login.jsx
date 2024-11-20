@@ -105,9 +105,9 @@ const Login = () => {
               required
             />
             <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
+              <Link to={"/reset"} className="label-text-alt link link-hover">
                 Forgot password?
-              </a>
+              </Link>
             </label>
           </div>
           <div className="mt-6 form-control">

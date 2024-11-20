@@ -8,6 +8,7 @@ import ProfilePage from "../pages/ProfilePage";
 import PrivateRoutes from "./PrivateRoutes";
 import ServiceDetails from "../pages/ServiceDetails";
 import ErrorPage from "../pages/ErrorPage";
+import Reset from "../pages/Reset";
 
 const router=createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router=createBrowserRouter([
         element: <Register></Register>
       }
     ]
+  },
+  {
+    path: "/reset",
+    element: <Reset></Reset>
   },
   {
     future: {
