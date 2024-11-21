@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const Events = () => {
+  document.title="Events | Career Hub"
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   useEffect(() => {
