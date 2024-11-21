@@ -7,7 +7,6 @@ import { Bounce } from "react-toastify";
 const ProfilePage = () => {
   document.title="Profile | Career Hub"
   const { user, updateUserProfile2 } = useContext(AuthContext);
-  console.log(user);
   const handleUpdate = (e) => {
     e.preventDefault();
     const name = e.target.name.value;

@@ -1,14 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import { Bounce } from "react-toastify";
 
 const Login = () => {
-  document.title="Login | Career Hub"
-  const { setUser, userLogin, googleSignIn } = useContext(AuthContext);
+  document.title = "Login | Career Hub";
+  const { setUser, userLogin, googleSignIn, mail, setMail } =
+    useContext(AuthContext);
+
   const navigate = useNavigate();
-  const location=useLocation();
+  const location = useLocation();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -42,38 +44,40 @@ const Login = () => {
           theme: "light",
           transition: Bounce,
         });
-      })
+      });
   };
 
-  const handleGoogleSignIn=()=>{
-    googleSignIn().then(result=>{
-      setUser(result.user);
-      navigate(location?.state ? location.state : "/");
-      toast.success("Login Successful", {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        setUser(result.user);
+        navigate(location?.state ? location.state : "/");
+        toast.success("Login Successful", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      })
+      .catch(() => {
+        toast.error("Please enter valid details", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       });
-    }).catch(()=>{
-      toast.error("Please enter valid details", {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
-    })
-  }
+  };
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="card bg-base-100 w-full max-w-lg shrink-0 md:border">
@@ -86,6 +90,9 @@ const Login = () => {
               <span className="label-text">Email</span>
             </label>
             <input
+              onChange={(e) => {
+                setMail(e.target.value);
+              }}
               name="email"
               type="email"
               placeholder="Enter your email"
@@ -105,7 +112,10 @@ const Login = () => {
               required
             />
             <label className="label">
-              <Link to={"/reset"} className="label-text-alt link link-hover">
+              <Link
+                to={"/reset"}
+                className="label-text-alt link link-hover"
+              >
                 Forgot password?
               </Link>
             </label>
@@ -118,7 +128,12 @@ const Login = () => {
         </form>
         <div className="card-body -mt-10">
           <p className="text-center text-gray-500">Or Sign in with</p>
-          <button onClick={handleGoogleSignIn} className="btn btn-neutral text-white text-lg">Google</button>
+          <button
+            onClick={handleGoogleSignIn}
+            className="btn btn-neutral text-white text-lg"
+          >
+            Google
+          </button>
           <p className="text-center mt-6 text-gray-500">
             Don't have any account?{" "}
             <Link to={"/auth/register"} className="text-blue-500 font-bold">

@@ -43,7 +43,6 @@ const DetailsCard = ({ service }) => {
               value={comment}
               onChange={(e) => {
                 setComment(e.target.value);
-                console.log(e.target.value);
               }}
               placeholder="Add your comment"
               className="w-full p-2 border border-gray-300 rounded-md"

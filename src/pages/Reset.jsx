@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
@@ -9,7 +9,14 @@ import Footer from "../components/Footer";
 
 const Reset = () => {
   document.title = "Password Reset";
-  const { resetPassword } = useContext(AuthContext);
+  const { resetPassword,mail } = useContext(AuthContext);
+  const [e, setE] = useState("");
+  useEffect(() => {
+    if(mail){
+      setEmail(mail);
+    }
+  },[mail]);
+  
   const handleSend = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -25,6 +32,7 @@ const Reset = () => {
         theme: "light",
         transition: Bounce,
       });
+      window.open("https://mail.google.com/", "_blank");
     });
   };
   return (
@@ -33,11 +41,13 @@ const Reset = () => {
       <div className="min-h-screen flex flex-col justify-center items-center">
         <form onSubmit={handleSend}>
           <div className="form-control space-y-2">
-            <input
+          <input
               name="email"
               type="email"
               placeholder="Enter your email"
               className="input input-bordered"
+              value={e}
+              onChange={(e) => setE(e.target.value)}
               required
             />
             <button className="btn bg-orange-500 text-white">Send Email</button>
