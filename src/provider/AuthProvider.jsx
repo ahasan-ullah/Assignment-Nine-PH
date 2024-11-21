@@ -38,7 +38,7 @@ const AuthProvider=({children})=>{
 
   const logout=()=>{
     setLoading(true);
-    toast.success("Loout Successful", {
+    toast.success("Logout Successful", {
       position: "top-center",
       autoClose: 3000,
       hideProgressBar: false,
