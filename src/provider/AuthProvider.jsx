@@ -2,6 +2,8 @@ import { createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, sendPasswordResetEmail, updateProfile } from "firebase/auth";
 import app from "../firebase/firebase.config"
 import { GoogleAuthProvider } from "firebase/auth";
+import { toast } from "react-toastify";
+import { Bounce } from "react-toastify";
 
 export const AuthContext=createContext(null);
 const auth=getAuth(app);
@@ -36,6 +38,17 @@ const AuthProvider=({children})=>{
 
   const logout=()=>{
     setLoading(true);
+    toast.success("Loout Successful", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
     return signOut(auth);
   }
 

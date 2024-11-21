@@ -14,7 +14,7 @@ const ProfilePage = () => {
     const photo = e.target.photo.value;
     updateUserProfile2({ displayName: name, photoURL: photo })
       .then(() => {
-        toast.success("Profile Updated!", {
+        toast.success("Profile Updated! Reload to see...", {
           position: "top-center",
           autoClose: 3000,
           hideProgressBar: false,
