@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Resume Writing Workshop",
+      "date": "November 25, 2024",
+      "description": "Learn how to craft a professional resume that stands out.",
+      "photo": "https://i.ibb.co.com/nfXNLdV/Resume-Review.png"
+    },
+    {
+      "id": 2,
+      "title": "Career Fair 2024",
+      "date": "December 10, 2024",
+      "description": "Connect with top companies and explore career opportunities.",
+      "photo": "https://i.ibb.co.com/m5vsZTZ/Career-Counseling-Sessions.jpg"
+    },
+    {
+      "id": 3,
+      "title": "LinkedIn Optimization Webinar",
+      "date": "December 15, 2024",
+      "description": "Discover how to optimize your LinkedIn profile to attract recruiters.",
+      "photo": "https://i.ibb.co.com/JQLVCpK/Linked-In-Profile-Optimization.png"
+    }
+  ]
+}

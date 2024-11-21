@@ -9,8 +9,9 @@ import PrivateRoutes from "./PrivateRoutes";
 import ServiceDetails from "../pages/ServiceDetails";
 import ErrorPage from "../pages/ErrorPage";
 import Reset from "../pages/Reset";
+import Events from "../pages/Events";
 
-const router=createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
@@ -18,18 +19,26 @@ const router=createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: ()=>fetch('services.json'),
-        element: <HomePage></HomePage>
+        loader: () => fetch("services.json"),
+        element: <HomePage></HomePage>,
       },
       {
         path: "/profile",
-        element: <PrivateRoutes><ProfilePage></ProfilePage></PrivateRoutes>
+        element: (
+          <PrivateRoutes>
+            <ProfilePage></ProfilePage>
+          </PrivateRoutes>
+        ),
       },
-    ]
+    ],
   },
   {
     path: "/services/:id",
-    element: <PrivateRoutes><ServiceDetails></ServiceDetails></PrivateRoutes>
+    element: (
+      <PrivateRoutes>
+        <ServiceDetails></ServiceDetails>
+      </PrivateRoutes>
+    ),
   },
   {
     path: "auth",
@@ -37,17 +46,25 @@ const router=createBrowserRouter([
     children: [
       {
         path: "/auth/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/auth/register",
-        element: <Register></Register>
-      }
-    ]
+        element: <Register></Register>,
+      },
+    ],
   },
   {
     path: "/reset",
-    element: <Reset></Reset>
+    element: <Reset></Reset>,
+  },
+  {
+    path: "/events",
+    element: (
+      <PrivateRoutes>
+        <Events></Events>
+      </PrivateRoutes>
+    ),
   },
   {
     future: {
@@ -56,7 +73,7 @@ const router=createBrowserRouter([
       v7_partialHydration: true,
       v7_relativeSplatPath: true,
     },
-  }
-])
+  },
+]);
 
 export default router;

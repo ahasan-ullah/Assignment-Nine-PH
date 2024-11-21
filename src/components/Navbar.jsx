@@ -8,6 +8,7 @@ const Navbar = () => {
     <>
       <NavLink className="p-2" to={"/"}>Home</NavLink>
       <NavLink className="p-2" to={"/profile"}>Profile</NavLink>
+      <NavLink className="p-2" to={"/events"}>Events</NavLink>
     </>
   );
   
